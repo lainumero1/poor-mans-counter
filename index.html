@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" name="viewport" content="width=device-width, maximum-scale=1.0, user-scalable=no">
+        <link rel="icon" type="image/x-icon" href="res/icon.png">
+        <link rel="stylesheet" href='static/bootstrap.css'>
+        <link rel="stylesheet" href='static/switch.css'>
+        <link rel="stylesheet" href='static/base.css'>
+        <script type="module" src="static/base.js"></script>
+        <script type="module" src="static/theme_module.js"></script>
+        <link rel="stylesheet" href='static/index.css'>
+        <script type="module" src="static/index.js"></script>
+        <title>Poor Man's Counter</title>
+    </head>
+    <body>
+        <div class="row" id="topbar" style="margin-left: 0px">
+            <div  class="side-button">
+                <button id="side-button" class="side-button">≡</button>
+            </div>
+            <div class="topic">
+                <div class="home-icon"><a href="https://lainumero1.github.io"><img src="static/homeIcon.png" id="home-icon"></a></div>
+                <div id="current-time"></div>
+                <div id="current-date"></div>
+            </div>
+        </div>
+        <div id="sidebar" class="sidebar">
+            <a href="./index.html">Home</a>
+            <a href="./settings.html">Settings</a>
+        </div>
+        
+        <div id="main" style="display: block">
+            <div id="filter-container">
+                <div>                
+                    <label for="time-interval">When do you get a paycheck: </label>
+                    <select id="time-interval" name="time-interval">
+                        <option value="hourly">Hourly</option>
+                        <option value="daily">Daily</option>
+                        <option value="weekly">Weekly</option>
+                        <option value="fortnightly">Fortnightly</option>
+                        <option value="monthly">Monthly</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="filter">Input your salary: </label>
+                    <input type="number" id="filter">
+                </div>
+            </div>
+            <div id="counter-container">
+            </div>
+            <br>
+        </div>
+
+    </body>
+</html>

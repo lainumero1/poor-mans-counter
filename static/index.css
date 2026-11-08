@@ -1,0 +1,24 @@
+
+#filter-container {
+    padding-bottom: 1rem;    
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#filter-container>input {
+    max-width: 40%;
+}
+
+#filter {
+    width: 30%;
+}
+
+#time-interval {
+    height: -webkit-fill-available;
+}
+
+#current-time, #current-date {
+    color: gray;
+    margin: 0.5rem 0 0 0.5rem;
+    width: 100%;
+}
