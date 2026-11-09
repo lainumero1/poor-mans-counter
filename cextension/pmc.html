@@ -1,0 +1,54 @@
+<html>
+<head>
+    <link rel="stylesheet" href="pmc.css">
+    <link rel="stylesheet" href="bootstrap.css">
+</head>
+<body>
+    <label>
+    <input type="checkbox" class="form-check-input" id="light-dark" value="value"> Dark Mode
+    </label>
+    <label>       
+    <input type="checkbox" class="form-check-input" id="onoff" value="value"> On/Off
+    </label>
+    <div id="filter-container">
+        <div>                
+            <label for="time-interval">How is your salary calculated </label>
+            <select id="time-interval" name="time-interval">
+                <option value="hourly">Hourly</option>
+                <option value="daily">Daily</option>
+                <option value="weekly">Weekly</option>
+                <option value="fortnightly">Fortnightly</option>
+                <option value="monthly">Monthly</option>
+            </select>
+        </div>
+        <div>
+            <label for="filter">Input your salary: $</label>
+            <input type="number" id="filter"> 
+            <label for="hours">How many hours do you work in a day? </label>
+            <input type="number" id="hours">
+            <label for="days">How many days do you work in a week? </label>
+            <input type="number" id="days">
+        </div>
+        <div>
+            <button id="submit">Go!</button>          
+        </div>
+    </div>
+    <div id="counter-container">
+        <div>
+            <p id="counter-increment">You have now earned: <span class="number" id="increment">$0.00</span></p>
+            <p id="counter-hourly">For this hour, you would have earned: <span class="number" id="hourly-number">$0.00</span></p>
+            <p id="counter-daily">For today, you would have earned: <span class="number" id="daily-number">$0.00</span></p>
+            <p id="counter-weekly">For this week, you would haveearned: <span class="number" id="weekly-number">$0.00</span></p>
+            <p id="counter-fortnightly">For this fortnight, you would have earned: <span class="number" id="fortnightly-number">$0.00</span></p>
+            <p id="counter-monthly">For this month, you would have earned: <span class="number" id="monthly-number">$0.00</span></p>
+        </div>
+    </div>
+    <br>
+    <div>
+        <p>Note 1: If number of hours / number of days are not inputted, a work week will be assumed to be 8 hours a day, 5 days a week.</p>
+        <p>Note 2: If you wish to keep this extension running in background, simply .</p>
+    </div>
+    <script src="jquery-3.7.1.min.js"></script>
+    <script src="pmc.js"></script>
+</body>
+</html>

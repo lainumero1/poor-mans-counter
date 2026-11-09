@@ -1,0 +1,10 @@
+{
+  "manifest_version": 3,
+  "name": "Poor Man's Counter",
+  "description": "Gets you through a day of hard work with a simple counter",
+  "version": "0.1",
+  "action": {
+    "default_popup": "pmc.html",
+    "default_icon": "128.png"
+  }
+}
