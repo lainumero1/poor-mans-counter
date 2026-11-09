@@ -228,3 +228,9 @@
         padding-top: 2vh;    
     }
 }
+
+#current-time, #current-date {
+    color: gray;
+    margin: 0.5rem 0 0 0.5rem;
+    width: 100%;
+}

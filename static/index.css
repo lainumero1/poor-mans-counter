@@ -1,8 +1,6 @@
 
 #filter-container {
     padding-bottom: 1rem;    
-    display: flex;
-    justify-content: space-evenly;
 }
 
 #filter-container>input {
@@ -14,11 +12,10 @@
 }
 
 #time-interval {
-    height: -webkit-fill-available;
+    height: auto;
 }
 
-#current-time, #current-date {
-    color: gray;
-    margin: 0.5rem 0 0 0.5rem;
-    width: 100%;
+.number {
+    font-size: 2rem;
+    font-weight: bold;
 }

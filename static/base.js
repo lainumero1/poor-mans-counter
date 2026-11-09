@@ -1,27 +1,17 @@
-import { setWeatherContainer } from "./weather.js";
-
 let sidebarStatus = false
 const sidebar = document.querySelector('#sidebar')
 const sideButton = document.querySelector('#side-button');
 const lastUpdate = document.getElementById('last-refresh')
 
 document.addEventListener('DOMContentLoaded', e => {
-    let loggedIn = localStorage.getItem('in')
-    
-    setWeatherContainer()
-
-    Date.prototype.today = function () { 
-        return ((this.getDate() < 10)?"0":"") + this.getDate() +"/"+(((this.getMonth()+1) < 10)?"0":"") + (this.getMonth()+1) +"/"+ this.getFullYear();
+    function updateTime() {
+        const now = new Date();
+        document.getElementById('current-time').textContent = `The current time is: 而家係：${now.toLocaleTimeString()}`
+        document.getElementById('current-date').textContent = `Today's date is: 今日係：${now.toLocaleDateString()}`
     }
 
-    Date.prototype.timeNow = function () {
-        return ((this.getHours() < 10)?"0":"") + this.getHours() +":"+ ((this.getMinutes() < 10)?"0":"") + this.getMinutes() +":"+ ((this.getSeconds() < 10)?"0":"") + this.getSeconds();
-    }
-
-    var currentDate = new Date();
-    var lastRefreshed = `Last Refreshed:  ${currentDate.today()} ${currentDate.timeNow()}`
-
-    lastUpdate.innerHTML = lastRefreshed
+    updateTime();
+    setInterval(updateTime, 1000);
 })
 
 document.addEventListener('click', e => {
