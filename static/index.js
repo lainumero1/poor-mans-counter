@@ -11,26 +11,36 @@ let monthlyNumber = document.getElementById('monthly-number')
 
 document.addEventListener("DOMContentLoaded", function() {
     let scheme = localStorage.getItem('scheme')
-    
     let totalSalary = 0
     let salaryPerSecond = 0
     let interval = null
     function countSalary() {
+        let startTime = document.getElementById('start-time').value
         let timeInterval = document.getElementById('time-interval').value
         let eachSalary = filter.value
         
         if (isNaN(hours) || hours === '') {
-                hours = 8
-            }
+            hours = 8
+        }
         if (isNaN(days) || days === '') {
             days = 5
         }
-        
+
         if (interval !== null) {
             clearInterval(interval)
-            totalSalary = 0
+            if (startTime !== '') {
+                let startTimeDate = new Date()
+                let [startHours, startMinutes] = startTime.split(':').map(Number)
+                startTimeDate.setHours(startHours, startMinutes, 0, 0)
+                let currentTime = new Date()
+                let timeDifference = (currentTime - startTimeDate) / 1000 // in seconds
+                totalSalary = salaryPerSecond * timeDifference
+            }
+            else {
+                totalSalary = 0
+            }
             salaryPerSecond = 0
-            increment.textContent = `$0.00`
+            increment.textContent = `$${totalSalary.toFixed(2)}`
             hourlyNumber.textContent = `$0.00`
             dailyNumber.textContent = `$0.00`
             weeklyNumber.textContent = `$0.00`
@@ -51,6 +61,24 @@ document.addEventListener("DOMContentLoaded", function() {
         }
         else if (timeInterval === 'monthly') {
             salaryPerSecond = eachSalary / (3600 * hours * days * 4)
+        }
+        console.log(startTime)
+
+        if (startTime !== '') {
+            let startTimeDate = new Date()
+            let [startHours, startMinutes] = startTime.split(':').map(Number)
+            startTimeDate.setHours(startHours, startMinutes, 0, 0)
+            let currentTime = new Date()
+            let timeDifference = (currentTime - startTimeDate) / 1000 // in seconds
+            totalSalary = salaryPerSecond * timeDifference
+            console.log(startTimeDate)
+            console.log(currentTime)
+            console.log(timeDifference)
+            console.log(salaryPerSecond)
+            console.log(totalSalary)
+        }
+        else {
+            totalSalary = 0
         }
 
         interval = setInterval(function() {

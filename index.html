@@ -33,20 +33,26 @@
                 <div>                
                     <label for="time-interval">How is your salary calculated 你人工點計 </label>
                     <select id="time-interval" name="time-interval">
+                        <option value="monthly">Monthly 月薪</option>
                         <option value="hourly">Hourly 時薪</option>
                         <option value="daily">Daily 日薪</option>
                         <option value="weekly">Weekly 週薪</option>
                         <option value="fortnightly">Fortnightly 雙週薪</option>
-                        <option value="monthly">Monthly 月薪</option>
                     </select>
                 </div>
-                <div>
+                <div id="salary-inputs">
                     <label for="filter">Input your salary: 打你嘅人工： $</label>
                     <input type="number" id="filter"> 
+                    <br>
                     <label for="hours">How many hours do you work in a day? 你一日返幾多個鐘頭工？</label>
                     <input type="number" id="hours">
+                    <br>
                     <label for="days">How many days do you work in a week? 你一星期返幾多日工？</label>
                     <input type="number" id="days">
+                    <br>
+                    <label for="start-time">What time do you start work? 你幾點鐘開始返工？</label>
+                    <input type="time" id="start-time">
+                    <br>
                 </div>
                 <div>
                     <button id="submit">Go! 開始！</button>          
@@ -57,7 +63,7 @@
                     <p id="counter-increment">You have now earned: 你已經賺到： <span class="number" id="increment">$0.00</span></p>
                     <p id="counter-hourly">For this hour, you would have earned: 呢個鐘頭，你會賺到： <span class="number" id="hourly-number">$0.00</span></p>
                     <p id="counter-daily">For today, you would have earned: 今日，你會賺到：<span class="number" id="daily-number">$0.00</span></p>
-                    <p id="counter-weekly">For this week, you would haveearned: 呢個禮拜，你會賺到：<span class="number" id="weekly-number">$0.00</span></p>
+                    <p id="counter-weekly">For this week, you would have earned: 呢個禮拜，你會賺到：<span class="number" id="weekly-number">$0.00</span></p>
                     <p id="counter-fortnightly">For this fortnight, you would have earned: 呢兩個禮拜，你會賺到：<span class="number" id="fortnightly-number">$0.00</span></p>
                     <p id="counter-monthly">For this month, you would have earned: 呢個月，你會賺到：<span class="number" id="monthly-number">$0.00</span></p>
                 </div>
